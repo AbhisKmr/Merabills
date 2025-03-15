@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Merabills</string>
+    <string name="add_payment"><u>Add Payment</u></string>
+    <string name="save_payments">Save Payments</string>
+    <string name="enter_amount">Enter Amount</string>
+    <string name="enter_provider">Enter Provider (Optional)</string>
+    <string name="enter_transaction">Enter Transaction Reference (Optional)</string>
+    <string name="save">Save</string>
+</resources>
