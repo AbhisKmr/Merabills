@@ -77,8 +77,9 @@ public class PaymentDialog extends Dialog {
             PaymentType type = (PaymentType) binding.paymentTypeSpinner.getSelectedItem();
             String provider = binding.providerInput.getText().toString();
             String reference = binding.referenceInput.getText().toString();
-
-            Payment payment = new Payment(amount, type, provider, reference);
+            String name = binding.additionalDetails1.getText().toString();
+            int number = Integer.parseInt(binding.additionalDetails2.getText().toString());
+            Payment payment = new Payment(amount, type, provider, reference, name, number);
             listener.onPaymentAdded(payment);
             dismiss();
         });
