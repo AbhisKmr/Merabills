@@ -42,7 +42,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void showAddPaymentDialog() {
-        PaymentDialog dialog = new PaymentDialog(this, payment -> {
+        PaymentDialog dialog = new PaymentDialog(this, paymentManager, payment -> {
             if (paymentManager.addPayment(payment)) {
                 updateUI();
             } else {

@@ -4,7 +4,7 @@
     android:layout_height="wrap_content"
     android:background="@color/white"
     android:orientation="vertical"
-    android:padding="8dp">
+    android:padding="12dp">
 
     <Spinner
         android:id="@+id/paymentTypeSpinner"
@@ -18,26 +18,44 @@
         android:layout_height="wrap_content"
         android:layout_marginBottom="8dp"
         android:hint="Enter Amount"
-        android:inputType="number" />
+        android:inputType="number"
+        android:textSize="18sp" />
+
+    <EditText
+        android:id="@+id/additionalDetails1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:textSize="18sp" />
+
+    <EditText
+        android:id="@+id/additionalDetails2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:textSize="18sp" />
 
     <EditText
         android:id="@+id/providerInput"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginBottom="8dp"
-        android:hint="Provider (ICICI, Citibank, etc.)" />
+        android:hint="Provider (ICICI, Citibank, etc.)"
+        android:textSize="18sp" />
 
     <EditText
         android:id="@+id/referenceInput"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginBottom="8dp"
-        android:hint="Transaction Reference" />
+        android:hint="Transaction Reference"
+        android:textSize="18sp" />
 
     <Button
         android:id="@+id/saveButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Save" />
+        android:text="Save"
+        android:textAllCaps="false" />
 
 </LinearLayout>
