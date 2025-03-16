@@ -56,6 +56,7 @@ public class MainActivity extends AppCompatActivity {
         binding.paymentChipGroup.removeAllViews();
         List<Payment> payments = paymentManager.getPayments();
         binding.paymentTxt.setVisibility(payments.isEmpty() ? GONE : VISIBLE);
+        binding.addPaymentButton.setVisibility(payments.size() == 3? GONE : VISIBLE);
         int total = 0;
         for (Payment payment : payments) {
             Chip chip = new Chip(this);
