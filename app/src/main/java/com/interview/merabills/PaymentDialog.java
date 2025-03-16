@@ -66,20 +66,36 @@ public class PaymentDialog extends Dialog {
         });
 
         binding.saveButton.setOnClickListener(v -> {
-            if (binding.amountInput.getText().toString().isEmpty()) {
+            String amount = binding.amountInput.getText().toString();
+            String name = binding.additionalDetails1.getText().toString();
+            String number = binding.additionalDetails2.getText().toString();
+
+            if (amount.isEmpty()) {
                 binding.amountInput.setError("Amount can't be empty!");
                 return;
-            } else if (Integer.parseInt(binding.amountInput.getText().toString()) == 0) {
+            } else if (Integer.parseInt(amount) == 0) {
                 return;
             }
 
-            int amount = Integer.parseInt(binding.amountInput.getText().toString());
             PaymentType type = (PaymentType) binding.paymentTypeSpinner.getSelectedItem();
+
+            if (type != PaymentType.CASH && name.isEmpty()) {
+                binding.additionalDetails1.setError("required");
+                return;
+            }
+
+            if (type != PaymentType.CASH && number.isEmpty()) {
+                binding.additionalDetails2.setError("required");
+                return;
+            }
+
             String provider = binding.providerInput.getText().toString();
             String reference = binding.referenceInput.getText().toString();
-            String name = binding.additionalDetails1.getText().toString();
-            int number = Integer.parseInt(binding.additionalDetails2.getText().toString());
-            Payment payment = new Payment(amount, type, provider, reference, name, number);
+            Payment payment = new Payment(
+                    Integer.parseInt(amount),
+                    type, provider,
+                    reference, name,
+                    !number.isEmpty() ? Integer.parseInt(number) : 0);
             listener.onPaymentAdded(payment);
             dismiss();
         });
